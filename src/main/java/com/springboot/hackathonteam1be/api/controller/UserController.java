@@ -5,7 +5,6 @@ import com.springboot.hackathonteam1be.api.dto.LoginRequestDto;
 import com.springboot.hackathonteam1be.api.dto.SignUpRequestDto;
 import com.springboot.hackathonteam1be.core.service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
