@@ -2,7 +2,7 @@ package com.springboot.hackathonteam1be.core.service;
 
 import com.springboot.hackathonteam1be.api.dto.SignUpRequestDto;
 import com.springboot.hackathonteam1be.api.dto.TokenResponseDto;
-import com.springboot.hackathonteam1be.config.JwtTokenProvider;
+import com.springboot.hackathonteam1be.common.config.JwtTokenProvider;
 import com.springboot.hackathonteam1be.api.dto.LoginRequestDto;
 import com.springboot.hackathonteam1be.core.domain.UserEntity;
 import com.springboot.hackathonteam1be.core.repository.UserRepository;
