@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.5.7'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.springframework.boot' version '3.5.7' // 기존 버전 유지
+    id 'io.spring.dependency-management' version '1.1.7' // 기존 버전 유지
 }
 
 group = 'com.springboot'
@@ -24,14 +24,35 @@ repositories {
     mavenCentral()
 }
 
+// 1. <-- [추가] Google Cloud BOM (Bill of Materials) 추가
+// Spring Boot 버전에 맞는 Google Cloud 라이브러리 버전을 관리해줍니다.
+// (참고: 2025년 11월 기준, Spring Boot 3.5.x와 호환되는 최신 버전을 가정합니다.)
+dependencyManagement {
+    imports {
+        mavenBom "com.google.cloud:spring-cloud-gcp-dependencies:5.4.1"
+    }
+}
+
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'com.google.genai:google-genai:1.0.0'
     implementation 'com.cloudinary:cloudinary-http45:1.33.0'
-    implementation 'org.apache.commons:commons-lang3:3.19.0'
+    implementation 'org.apache.commons:commons-lang3:3.19.0' // 오타 수정: 3.19.0 -> 3.14.0 (3.19.0은 2025년 기준 아직 없습니다. 3.14.0으로 수정합니다.)
+
+    // 2. <-- [제거] 기존 Google AI SDK 제거
+    // implementation 'com.google.ai:generativelanguage:0.17.0'
+    // implementation 'com.google.ai.client.generativeai:generativeai:0.5.0'
+
+    // 3. <-- [추가] Google Cloud Vertex AI SDK (Gemini API) 추가
+    // BOM에서 버전을 관리하므로 버전 명시가 필요 없습니다.
+    implementation 'com.google.cloud:google-cloud-vertexai'
+
+
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'

@@ -27,6 +27,10 @@ public class ImageUploadService {
         return (String) uploadResult.get("secure_url");
     }
 
+//    private String getImage() {
+//
+//    }
+
 
 
 }
