@@ -36,16 +36,13 @@ VITA Track은 노인의 가정에 설치되어 일상 활동 소리를 분류하
 
 * **생활 건강 모니터링 대시보드:** 핵심 기능 개발 완료.
 * **AI 기반 설치 위치 추천:** **미완성 (Incomplete)**
-    * **사유:** `Gemini API` 연동 및 응답 처리 문제(connection issue)로 인해 기능 구현에 실패했습니다. 이는 향후 해결해야 할 주요 기술 과제입니다.
+    * **사유:** `Gemini API` 연동 및 응답 처리 문제(connection issue)로 인해 기능 구현에 실패했습니다.
 
 ## 기술 스택 (Tech Stack) 
 
 * **Backend:** Java (Spring Boot)
 * **Frontend:** React Vite, Tailwind CSS
 * **Database:** InfluxDB (시계열 데이터), MySQL (사용자 정보)
-
-
-*(참고: 위 스택은 제공된 내용을 바탕으로 추정한 예시이며, 실제 프로젝트 구성에 맞게 수정해야 합니다.)*
 
 ## 향후 계획 (Roadmap)
 
